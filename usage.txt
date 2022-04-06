@@ -1,4 +1,4 @@
-cping: a ping utility inspired by networking operating systems
+cping: a ping utility inspired by network operating systems
 
 Usage: cping <options> <ip address>
 
