@@ -1,0 +1,52 @@
+---
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.18
+
+      - name: checkout source
+        uses: actions/checkout@v1
+
+      - name: build linux x64
+        env:
+          CGO_ENABLED: 0
+          GOOS: linux
+          GOARCH: amd64
+        run: go build -o cping-linux-amd64 .
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cping-linux-amd64
+          path: cping-linux-amd64 
+
+      - name: build macos x64
+        env:
+          CGO_ENABLED: 0
+          GOOS: darwin
+          GOARCH: amd64
+        run: go build -o cping-darwin-amd64 .
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cping-darwin-amd64
+          path: cping-darwin-amd64 
+
+      - name: build macos arm64
+        env:
+          CGO_ENABLED: 0
+          GOOS: darwin
+          GOARCH: arm64
+        run: go build -o cping-darwin-arm64 .
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cping-darwin-arm64
+          path: cping-darwin-arm64 
+
