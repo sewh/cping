@@ -1,0 +1,28 @@
+cping: a ping utility inspired by networking operating systems
+
+Usage: cping <options> <ip address>
+
+Valid options:
+
+    help             : display this message and exit
+    ?                : display this message and exit
+    -h --help        : display this message and exit
+
+    ipv4             : send ICMPv4 echo-request messages
+    ipv6             : send ICMPv6 echo-request messages
+    count <int>      : amount of echo-request messages to send
+    size  <int>      : how big should the entire packet be (excl. ethernet)
+    payload <string> : use a string as the packet payload
+    ttl <int>        : the IP header time to live value
+    timeout <int>    : how many seconds to wait for a reply
+
+Result meanings:
+
+    ! : an echo-response message was successfully received
+    . : timeout was reached before an echo-response message was received
+    U : a destination unreachable message was received
+    Q : a source quench message was received
+    M : packet couldn't fragment along its journey
+    ? : received an unexpected packet response
+    & : packet exceeded its TTL along its journey
+
