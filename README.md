@@ -10,7 +10,7 @@
 
 ## Usage
 
-See [./usage.txt](usage.txt) for up to date usage instructions (or run `cping` with `--help` or `help`).
+See [usage.txt](./usage.txt) for up to date usage instructions (or run `cping` with `--help` or `help`).
 
 ## Examples
 
