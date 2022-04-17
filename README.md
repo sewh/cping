@@ -3,7 +3,7 @@
 `cping` is a simple ping utility that closely resembles that of a popular networking operating system. It supports:
 
 - A CLI interface that should feel familiar to anyone who's used a network operating system - including the ability to abbreviate commands;
-- IPv4 or IPv4 echo messages;
+- IPv4 or IPv6 echo messages;
 - Setting the length of the total packet (useful for finding MTU problems);
 - Setting the number of echo messages sent to the destination;
 - Setting the payload of the ICMP echo-response messages.
